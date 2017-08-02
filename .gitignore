@@ -31,7 +31,5 @@ proguard/
 /gitpushcustom*.sh
 /gitpullpushcustom*.sh
 /fastlane/report.xml
-gradlew
-gradlew.bat
 
 
