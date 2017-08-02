@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SITnotify</string>
+    <string name="news_menu">News</string>
+    <string name="calendar_menu">Calendar</string>
+    <string name="service_menu">Services</string>
+    <string name="more_menu">More</string>
+</resources>
