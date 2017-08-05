@@ -12,20 +12,19 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SchemeActivity" >
+        <activity android:name=".SchemeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="sitnotify" android:host="main" />
+                <data
+                    android:host="main"
+                    android:scheme="sitnotify" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
