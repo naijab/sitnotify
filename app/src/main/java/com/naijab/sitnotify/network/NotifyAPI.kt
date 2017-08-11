@@ -8,6 +8,6 @@ import retrofit2.http.Query
 interface NotifyAPI {
 
     fun getNews(@Query("key") key: String)
-    : Call<NewsModel>;
+    : Call<NewsModel>
 
 }
