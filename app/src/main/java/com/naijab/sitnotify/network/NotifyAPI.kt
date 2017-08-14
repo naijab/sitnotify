@@ -1,13 +1,15 @@
 package com.naijab.sitnotify.network
 
 import com.naijab.sitnotify.newsmenu.model.NewsModel
-import io.reactivex.Flowable
+import io.reactivex.Observable
+import retrofit2.http.GET
 import retrofit2.http.Query
 
 
 interface NotifyAPI {
 
+    @GET("news")
     fun getNews(@Query("key") key: String)
-    : Flowable<NewsModel>
+    : Observable<List<NewsModel>>
 
 }
