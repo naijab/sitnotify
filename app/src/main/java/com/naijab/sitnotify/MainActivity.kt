@@ -23,6 +23,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         toolbar.setTitle("Hello")
         setupFragment()
+        replaceFragments(0)
         initBottomNavBar()
         setupBottomNavBar()
     }
@@ -64,10 +65,10 @@ class MainActivity : BaseActivity() {
     private fun replaceFragments(position: Int) {
         supportFragmentManager.beginTransaction().apply {
             when (position) {
-                1 -> replace(R.id.container, fragmentNews)
-                2 -> replace(R.id.container, fragmentActivity)
-                3 -> replace(R.id.container, fragmentCalendar)
-                4 -> replace(R.id.container, fragmentMore)
+                0 -> replace(R.id.container, fragmentNews)
+                1 -> replace(R.id.container, fragmentActivity)
+                2 -> replace(R.id.container, fragmentCalendar)
+                3 -> replace(R.id.container, fragmentMore)
             }
         }.commitAllowingStateLoss()
     }
