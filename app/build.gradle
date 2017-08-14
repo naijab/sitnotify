@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.2'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
     implementation 'com.android.support:support-v4:26.0.0'
