@@ -1,32 +1,27 @@
 package com.naijab.sitnotify.network
 
-import android.icu.util.TimeUnit
-import javax.xml.datatype.DatatypeConstants.MINUTES
-import okhttp3.OkHttpClient
+import com.naijab.sitnotify.newsmenu.model.NewsModel
+import io.reactivex.Observable
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
-
 class NotifyAPIConnect {
 
-    private val BASE_URL:String = "http://sitnotify.azurewebsites.net/api/"
+    private val BASE_URL = "http://sitnotify.azurewebsites.net/api/"
+    private val SECRETE_KEY = "Dy0XS0KSL2kTCV9wTIrvOAC4S12NFeugR"
+    private val service:NotifyAPI
 
-    companion object {
-        fun newInstance(): NotifyAPIConnect {
-            val notifyConnect: NotifyAPIConnect = NotifyAPIConnect()
-            return notifyConnect
-        }
-    }
-
-    fun getConnection(): NotifyAPI {
+    init {
         val retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-        val notifyAPI:NotifyAPI = retrofit.create(NotifyAPI::class.java)
-        return notifyAPI
+        service = retrofit.create<NotifyAPI>(NotifyAPI::class.java)
     }
-    
+
+    fun loadNews(): Observable<List<NewsModel>> {
+        return service.getNews(SECRETE_KEY)
+    }
 }
