@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.naijab.sitnotify.R
 import com.naijab.sitnotify.network.NotifyAPIConnect
 import com.naijab.sitnotify.newsmenu.adapter.NewsRecyclerViewAdapter
@@ -75,8 +76,9 @@ class NewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     }
 
     fun setupRecyclerView(newsList: ArrayList<NewsModel>) {
-        mAdapter = NewsRecyclerViewAdapter(newsList)
-        newsRecycler.adapter = mAdapter
+        newsRecycler.adapter = NewsRecyclerViewAdapter(newsList, listener = {
+            Toast.makeText(activity, "${it.title} clicked", Toast.LENGTH_SHORT).show()
+        })
     }
 
     override fun onRefresh() {
