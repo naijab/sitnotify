@@ -20,8 +20,7 @@ import kotlinx.android.synthetic.main.fragment_news.*
 class NewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private var mNewsArrayList: ArrayList<NewsModel>? = null
-    private var mAdapter: NewsRecyclerViewAdapter? = null
-
+    
     companion object {
         fun newInstance(): NewsFragment {
             val newsFragment: NewsFragment = NewsFragment()
