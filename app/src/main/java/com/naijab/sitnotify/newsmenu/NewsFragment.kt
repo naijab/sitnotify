@@ -1,6 +1,8 @@
 package com.naijab.sitnotify.newsmenu
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
@@ -12,6 +14,7 @@ import android.widget.Toast
 import com.naijab.sitnotify.R
 import com.naijab.sitnotify.network.NotifyAPIConnect
 import com.naijab.sitnotify.newsmenu.adapter.NewsRecyclerViewAdapter
+import com.naijab.sitnotify.newsmenu.detail.NewsDetailActivity
 import com.naijab.sitnotify.newsmenu.model.NewsModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -20,6 +23,7 @@ import kotlinx.android.synthetic.main.fragment_news.*
 class NewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private var mNewsArrayList: ArrayList<NewsModel>? = null
+    private val NEWS_ITEM = "NewsItem"
 
     companion object {
         fun newInstance(): NewsFragment {
@@ -76,8 +80,14 @@ class NewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     fun setupRecyclerView(newsList: ArrayList<NewsModel>) {
         newsRecycler.adapter = NewsRecyclerViewAdapter(newsList, listener = {
-            Toast.makeText(activity, "${it.title} clicked", Toast.LENGTH_SHORT).show()
+            goToNewsDetail(it)
         })
+    }
+
+    fun goToNewsDetail(newsList: NewsModel) {
+        val intent = Intent(activity, NewsDetailActivity::class.java)
+        intent.putExtra(NEWS_ITEM, newsList)
+        startActivity(intent)
     }
 
     override fun onRefresh() {
