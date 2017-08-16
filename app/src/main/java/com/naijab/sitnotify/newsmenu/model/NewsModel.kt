@@ -5,18 +5,18 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class NewsModel(
-        @SerializedName("_id") val id: String,
-        @SerializedName("title") val title: String,
-        @SerializedName("image") val image: String,
-        @SerializedName("description") val description: String,
-        @SerializedName("category") val category: String,
-        @SerializedName("level") val level: String,
-        @SerializedName("program") val program: String,
-        @SerializedName("link") val link: String,
-        @SerializedName("attached_file") val attachedFile: String,
-        @SerializedName("created_date") val createdDate: String,
-        @SerializedName("edited_date") val editedDate: String,
-        @SerializedName("__v") val v: Int,
+        @SerializedName("_id") val id: String? = null,
+        @SerializedName("title") val title: String ? = null,
+        @SerializedName("image") val image: String ? = null,
+        @SerializedName("description") val description: String ? = null,
+        @SerializedName("category") val category: String ? = null,
+        @SerializedName("level") val level: String ? = null,
+        @SerializedName("program") val program: String ? = null,
+        @SerializedName("link") val link: String ? = null,
+        @SerializedName("attached_file") val attachedFile: String ? = null,
+        @SerializedName("created_date") val createdDate: String ? = null,
+        @SerializedName("edited_date") val editedDate: String? = null,
+        @SerializedName("__v") val v: String ? = null,
         @SerializedName("is_important") val isImportant: Boolean
 ) : Parcelable {
     constructor(source: Parcel) : this(
@@ -31,7 +31,7 @@ data class NewsModel(
             source.readString(),
             source.readString(),
             source.readString(),
-            source.readInt(),
+            source.readString(),
             1 == source.readInt()
     )
 
@@ -49,7 +49,7 @@ data class NewsModel(
         writeString(attachedFile)
         writeString(createdDate)
         writeString(editedDate)
-        writeInt(v)
+        writeString(v)
         writeInt((if (isImportant) 1 else 0))
     }
 
@@ -60,4 +60,5 @@ data class NewsModel(
         }
     }
 }
+
 
