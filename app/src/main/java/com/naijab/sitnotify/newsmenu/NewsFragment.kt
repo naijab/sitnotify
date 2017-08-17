@@ -70,7 +70,7 @@ class NewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         swipeRefresh?.isRefreshing = false
         mNewsArrayList = ArrayList<NewsModel>(newsList)
         setupRecyclerView(mNewsArrayList as ArrayList<NewsModel>)
-        Log.e("NewsFragment","Load API finished")
+        Log.i("NewsFragment","Load API finished")
     }
 
     fun handleError(error:Throwable){
