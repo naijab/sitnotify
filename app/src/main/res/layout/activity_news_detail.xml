@@ -22,4 +22,12 @@
 
     <include layout="@layout/content_activity_news_detail" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_link" />
+
 </android.support.design.widget.CoordinatorLayout>
