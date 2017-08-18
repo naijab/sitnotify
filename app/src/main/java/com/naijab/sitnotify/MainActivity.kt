@@ -21,7 +21,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        toolbar.setTitle("Hello")
+        toolbar.title = this.getString(R.string.app_name)
         setupFragment()
         replaceFragments(0)
         initBottomNavBar()
