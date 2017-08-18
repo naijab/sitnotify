@@ -38,12 +38,35 @@ class NewsRecyclerViewAdapter(val newsList: ArrayList<NewsModel>,
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItems(news: NewsModel, listener: (NewsModel) -> Unit) = with(itemView){
-            itemView.titleNews.text = news.title
+
+            itemView.imageNews.visibility = View.VISIBLE
+
+            setTitle(news.title)
+            setProgram(news.program)
+            setImage(news.image)
             setOnClickListener { listener(news) }
-            Glide.with(itemView.context)
-                    .load(news.image)
-                    .apply(RequestOptions().diskCacheStrategy(DiskCacheStrategy.RESOURCE))
-                    .into(itemView.imageNews)
+        }
+
+        fun setTitle(title:String?){
+            itemView.titleNews.text = title
+        }
+
+        fun setProgram(program:String?){
+            itemView.programNews.text = program
+        }
+
+        fun setImage(url:String?){
+            if(url?.length == 0){
+                itemView.imageNews.visibility = View.GONE
+                Log.i("NewsAdapter","image gone")
+            }else{
+                itemView.imageNews.visibility = View.VISIBLE
+                Log.i("NewsAdapter","image visible")
+                Glide.with(itemView.context)
+                        .load(url)
+                        .apply(RequestOptions().diskCacheStrategy(DiskCacheStrategy.RESOURCE))
+                        .into(itemView.imageNews)
+            }
         }
     }
 }
