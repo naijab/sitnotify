@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"
     android:orientation="vertical"
     app:cardCornerRadius="10dp"
     app:cardElevation="@dimen/cardview_default_elevation">
@@ -23,19 +23,39 @@
             android:scaleType="centerCrop" />
 
         <TextView
+            android:textColor="@color/colorGreyDark"
             android:id="@+id/titleNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:padding="10dp"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/programNews"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="16sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="5dp"
+                android:paddingStart="10dp"
+                android:text="@string/program"
+                android:textColor="@color/colorGrey"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/programNews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/program"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
