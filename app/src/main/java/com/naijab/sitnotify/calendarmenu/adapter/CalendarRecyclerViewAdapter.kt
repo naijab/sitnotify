@@ -1,6 +1,7 @@
 package com.naijab.sitnotify.calendarmenu.adapter
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +35,9 @@ class CalendarRecyclerViewAdapter(val calendarList: ArrayList<CalendarModel>,
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItems(calendar: CalendarModel, listener: (CalendarModel) -> Unit) = with(itemView) {
+
+            itemView.descriptionCalendar.visibility = View.VISIBLE
+
             setTitle(calendar.title)
             setDescription(calendar.description)
             setDate(calendar.date)
@@ -45,7 +49,14 @@ class CalendarRecyclerViewAdapter(val calendarList: ArrayList<CalendarModel>,
         }
 
         fun setDescription(description: String?) {
-            itemView.descriptionCalendar.text = description
+            if(description?.length == 0){
+                itemView.descriptionCalendar.visibility = View.GONE
+                Log.i("CalendarAdapter","description gone")
+            }else{
+                itemView.descriptionCalendar.visibility = View.VISIBLE
+                Log.i("CalendarAdapter","description visible")
+                itemView.descriptionCalendar.text = description
+            }
         }
 
         fun setDate(date: String?) {
