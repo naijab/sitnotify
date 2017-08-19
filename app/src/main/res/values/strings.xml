@@ -6,4 +6,5 @@
     <string name="more_menu">More</string>
     <string name="service_menu">Service</string>
     <string name="program">Program</string>
+    <string name="date">Date</string>
 </resources>
