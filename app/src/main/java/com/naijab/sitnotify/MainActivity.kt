@@ -1,14 +1,14 @@
 package com.naijab.sitnotify
 
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
-import com.naijab.sitnotify.base.BaseActivity
 import com.naijab.sitnotify.newsmenu.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_activity_main.*
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
 
     lateinit internal var fragmentNews: NewsFragment
     lateinit internal var fragmentService: ServiceFragment
