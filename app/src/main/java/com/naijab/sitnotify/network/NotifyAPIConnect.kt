@@ -2,6 +2,7 @@ package com.naijab.sitnotify.network
 
 import com.naijab.sitnotify.newsmenu.model.CalendarModel
 import com.naijab.sitnotify.newsmenu.model.NewsModel
+import com.naijab.sitnotify.servicemenu.model.ServiceModel
 import io.reactivex.Observable
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Retrofit
@@ -28,5 +29,9 @@ class NotifyAPIConnect {
 
     fun loadCalendar(): Observable<List<CalendarModel>> {
         return service.getCalendar(SECRETE_KEY)
+    }
+
+    fun loadService(): Observable<List<ServiceModel>> {
+        return service.getService(SECRETE_KEY)
     }
 }
