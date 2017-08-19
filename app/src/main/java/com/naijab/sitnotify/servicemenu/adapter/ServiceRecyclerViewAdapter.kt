@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.View
 import com.naijab.sitnotify.R
-import com.naijab.sitnotify.newsmenu.model.ServiceModel
+import com.naijab.sitnotify.servicemenu.model.ServiceModel
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.service_list_layout.view.*
 
