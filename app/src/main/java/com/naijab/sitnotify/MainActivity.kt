@@ -59,8 +59,8 @@ class MainActivity : BaseActivity() {
         supportFragmentManager.beginTransaction().apply {
             when (position) {
                 0 -> replace(R.id.container, fragmentNews)
-                2 -> replace(R.id.container, fragmentCalendar)
-                3 -> replace(R.id.container, fragmentService)
+                1 -> replace(R.id.container, fragmentCalendar)
+                2 -> replace(R.id.container, fragmentService)
             }
         }.commitAllowingStateLoss()
     }
