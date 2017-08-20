@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SIT notify</string>
+    <string name="app_name">sitnotify</string>
     <string name="news_menu">News</string>
     <string name="activity_menu">Activity</string>
     <string name="calendar_menu">Calendar</string>
